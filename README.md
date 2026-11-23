@@ -1,3 +1,60 @@
+[← Voltar ao perfil](https://github.com/yanxc76)
+
+# SSDLC · Laboratório de desenvolvimento seguro
+
+**Java 21 · Spring Boot · Vue 3 · H2 · Segurança de software**
+
+Aplicação de gerenciamento de usuários usada em uma oficina acadêmica para estudar identificação e correção de vulnerabilidades ao longo do ciclo de desenvolvimento.
+
+> **Ambiente de estudo:** este código contém vulnerabilidades intencionais. Execute localmente em um ambiente de laboratório, sem dados reais ou exposição pública.
+
+## Componentes
+
+| Caminho | Papel |
+| --- | --- |
+| [backend/](backend/) | API Java 21 com Spring Boot e H2 |
+| [frontend/](frontend/) | Interface Vue 3 |
+| [.gitleaks.toml](.gitleaks.toml) | Configuração de detecção de segredos |
+| [.zap/rules.tsv](.zap/rules.tsv) | Regras de apoio ao OWASP ZAP |
+| [.github/workflows/security-scan.yml](.github/workflows/security-scan.yml) | Arquivo reservado para o workflow de segurança |
+
+## Estado da automação
+
+O arquivo `security-scan.yml` está vazio nesta revisão. As ferramentas de segurança fazem parte do roteiro da oficina; o repositório ainda não contém uma pipeline implementada nesse arquivo. Não há badge de execução de CI nem promessa de verificações automáticas já ativas.
+
+## Executar localmente
+
+Requisitos: **JDK 21**, Maven, Node.js compatível com Vue CLI 5 e npm.
+
+```bash
+git clone https://github.com/yanxc76/ssdlc-mackenzie.git
+cd ssdlc-mackenzie/backend
+mvn spring-boot:run
+```
+
+Em outro terminal, na pasta `frontend`:
+
+```bash
+npm ci
+npm run serve
+```
+
+A oficina utiliza a API em **http://localhost:8080** e o frontend em **http://localhost:3000**. Confira a URL apresentada pelo terminal ao iniciar os serviços.
+
+## Trilhas da oficina
+
+- Identificação de SQL injection, XSS e falhas de validação.
+- Revisão de credenciais e tratamento de dados sensíveis.
+- Análise de dependências e configurações de segurança.
+- Construção de uma pipeline com ferramentas como Gitleaks, CodeQL, OWASP Dependency-Check e ZAP.
+
+**Origem:** Oficina de SSDLC — Universidade Presbiteriana Mackenzie.
+
+<details>
+<summary>Material original da disciplina</summary>
+
+O conteúdo abaixo preserva o enunciado e as orientações originais. Para a estrutura atual do repositório, use a apresentação e os comandos acima.
+
 # 🎓 Oficina SSDLC - Secure Software Development Lifecycle
 
 Este projeto foi criado especialmente para ensinar conceitos de segurança no desenvolvimento de software através da prática.
@@ -165,3 +222,6 @@ Durante a oficina, não hesite em pedir ajuda aos instrutores!
 ---
 
 **Desenvolvido para a Oficina de SSDLC - Universidade Presbiteriana Mackenzie**
+
+
+</details>
